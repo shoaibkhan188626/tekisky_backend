@@ -65,7 +65,7 @@ const studentSchema = new mongoose.Schema({
   },
 
   courseEnrolled: {
-    type: String,  
+    type: String,
     required: true,
     enum: ["front-end", "back-end", "MERN-Full stack"],
   },
@@ -96,7 +96,10 @@ const studentSchema = new mongoose.Schema({
     enum: ["teacher", "student"],
     default: "student",
   },
-
+  nationality: {
+    type: String,
+    required: [true, "Please enter your nationality"],
+  },
   createdAt: {
     type: Date,
     default: Date.now,
