@@ -4,68 +4,68 @@ import validator from "validator";
 const studentSchema = new mongoose.Schema({
   name: {
     type: String,
-    required: [true, "pleae enter your name"],
+    required: [true, "Please enter your Name"],
   },
 
   personalNumber: {
     type: Number,
-    required: [true, "pleae enter your personal number"],
+    required: [true, "Please enter your personal Number"],
   },
 
   parentsPhoneNumber: {
     type: Number,
-    required: [true, "pleae enter your parent's phone number"],
+    required: [true, "Please enter your Parent's Phone Number"],
   },
 
   dateOfBirth: {
-    required: [true, "pleae enter your date of birth"],
+    required: [true, "Please enter your date of Birth"],
     type: Date,
   },
 
   gender: {
     type: String,
-    enum: ["male", "female", "other"],
-    required: [true, "pleae enter your gender"],
+    enum: ["Male", "Female", "Other"],
+    required: [true, "Please choose your Gender"],
   },
 
   address: {
     street: {
       type: String,
-      required: [true, "pleae enter your street address"],
+      required: [true, "Please enter your street address"],
     },
 
     city: {
       type: String,
-      required: [true, "pleae enter your city"],
+      required: [true, "Please enter your city"],
     },
 
     state: {
       type: String,
-      required: [true, "pleae enter your state"],
+      required: [true, "Please enter your state"],
     },
 
     zip: {
       type: String,
-      required: [true, "pleae enter your zip"],
+      required: [true, "Please enter your zip"],
     },
   },
 
   email: {
     type: String,
-    required: [true, "pleae enter your email"],
+    required: [true, "Please enter your email"],
     unique: true,
     validate: [validator.isEmail, "please enter a valid email"],
   },
 
   password: {
     type: String,
-    required: [true, "pleae enter your password"],
+    required: [true, "Please enter your password"],
     minLength: [8, "password should be at least 8 characters"],
     select: false,
   },
 
   courseEnrolled: {
-    type: String,
+    type: String,  
     required: true,
     enum: ["front-end", "back-end", "MERN-Full stack"],
   },
@@ -78,17 +78,17 @@ const studentSchema = new mongoose.Schema({
   educationDetails: {
     institute: {
       type: String,
-      required: [true, "pleae enter the name of your institute"],
+      required: [true, "Please enter the name of your institute"],
     },
 
     highestQualification: {
       type: String,
-      required: [true, "pleae enter your highest education"],
+      required: [true, "Please enter your highest education"],
     },
 
     yearOfCompletion: {
       type: Number,
-      required: [true, "pleae enter your year of completion"],
+      required: [true, "Please enter your year of completion"],
     },
   },
   role: {
